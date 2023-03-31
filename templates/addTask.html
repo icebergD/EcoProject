@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block content %}
+<style>
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.form-content{
+    width:80%;
+    margin-left: 10%;
+}
+</style>
+<form action = "/add-task" method = "post" class="form-content">
+  <label for="fname">Title</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Description</label><br>
+  <input type="text" id="lname" name="lname"><br>
+  <label for="mname">Tokens</label><br>
+  <input type="number" id="mname" name="mname"><br>
+  <input type="submit" value="send" class="get-coins-from-video">
+</form>
+
+{% endblock %}

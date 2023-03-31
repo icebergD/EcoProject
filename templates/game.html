@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+
+{% block content %}
+<style>
+    .main-screen{
+        overflow: hidden
+        height: 90%;
+    }
+    .game-background{
+        height: 600px;
+        margin-left: -10px;
+    }
+    .arrow-btn{
+        background: #aaa;
+        color: #fff;
+        border-radius: 50%;
+        padding: 20px;
+    }
+    .buttons-game{
+        display: flex;
+        justify-content: space-around;
+    }
+</style>
+<div class="main-screen"><img class="game-background" src="{{ url_for('static', filename = 'img/photo_2023-03-26_13-43-25.jpg') }}"></div>
+<div class="buttons-game">
+    <div class="arrow-btn" id="left-button"><</div>
+    <div class="arrow-btn" id="right-button">></div>
+</div>
+<script>
+
+
+  // Get references to the left and right buttons
+const leftButton = document.querySelector('#left-button');
+const rightButton = document.querySelector('#right-button');
+
+// Get a reference to the element you want to move
+const movableElement = document.querySelector('.game-background');
+
+// Set the initial margin-left value to 0
+let marginLeft = -10;
+
+// Add event listeners to the buttons
+leftButton.addEventListener('click', () => {
+  // Decrement the margin-left value by 10 pixels
+  marginLeft += 10;
+  // Update the style of the movable element
+  movableElement.style.marginLeft = marginLeft+"px";
+});
+
+rightButton.addEventListener('click', () => {
+  // Increment the margin-left value by 10 pixels
+  marginLeft -= 10;
+  // Update the style of the movable element
+  movableElement.style.marginLeft = marginLeft+"px";
+});
+
+
+
+</script>
+
+
+{% endblock %}

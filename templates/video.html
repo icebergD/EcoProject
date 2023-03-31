@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="video-window">
+	<iframe width="100%" height="60%" src="https://www.youtube.com/embed/G-Ej9Y4ymbg60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<button class="get-coins-from-video">Get 1 <img src="{{ url_for('static', filename = 'img/Group 29.png') }}"></button>
+</div>
+{% endblock %}

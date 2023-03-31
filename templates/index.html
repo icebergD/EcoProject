@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+	<div class="screen">
+		<div class="header">
+			<a href="/" class="header-title"><img src="{{ url_for('static', filename = 'img/Subtract.png') }}">Corner</a>
+			<div class="header-coin">{{ context.balance }}<img src="{{ url_for('static', filename = 'img/Group 29.png') }}"></div>
+		</div>
+		<div class="content-my">
+		{% block content %}
+			<div class="main-image">
+				<!-- <img src="{{ url_for('static', filename = 'img/32-iuI6cmxmU-transformed.png') }}"> -->
+				<img src="{{ context.url }}">
+			</div>
+			<div class="center-buttons">
+				<a href="/video" class="block-left"><img src="{{ url_for('static', filename = 'img/Vector-3.png') }}"></a>
+				<a href="/tasks" class="block-right"><img src="{{ url_for('static', filename = 'img/Subtract (1).png') }}"></a>
+			</div>
+		{% endblock %}
+		</div>
+		<div class="footer">
+			<a href="#" class="footer-left-btn"><img src="{{ url_for('static', filename = 'img/Vector-2.png') }}"></a>
+			<a href="/game" class="white-circle">
+				<div  class="purple-circle">
+					<img src="{{ url_for('static', filename = 'img/Vector.png') }}">
+				</div>
+			</a>
+			<a href="#" class="footer-right-btn"><img src="{{ url_for('static', filename = 'img/Vector-1.png') }}"></a>
+		</div>
+	</div>
+</body>
+</html>

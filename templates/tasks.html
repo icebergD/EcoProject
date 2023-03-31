@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+
+{% block content %}
+<style>
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-info h2 {
+  margin-top: 0;
+}
+.cards-content{
+  height: 75%;
+  overflow: auto;
+}
+.add-task-btn{
+  margin-left: 40%;
+  text-decoration:none;
+}
+</style>
+<a href="/add-task" class="add-task-btn get-coins-from-video">Add Task</a>
+{{ tasks }}
+<div class="cards-content">
+
+  {% for i in context.tasks %}
+  <div class="card">
+    <div class="course-info">
+      <h2>{{ i.0 }}</h2>
+      <p>{{ i.1 }}</p>
+    </div>
+    <div class="join-button">
+      <button class="get-coins-from-video">Join {{ i.2 }} <img src="{{ url_for('static', filename = 'img/Group 29.png') }}"></button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
